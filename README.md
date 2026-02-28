@@ -1,6 +1,7 @@
 # Q2CPU - The 2-bit CPU Emulator
 A 2-bit experimental CPU emulator. This project was made using the Godot Game Engine.
-<img width="1916" height="1044" alt="image" src="https://github.com/user-attachments/assets/790b12ba-c22b-45ff-b3bb-1b297a75e1b8" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3d2ee381-a4b1-4ea3-80b7-7bae399eb640" />
+
 
 
 ## Hardware Specifications
