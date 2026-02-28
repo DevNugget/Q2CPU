@@ -13,6 +13,8 @@ The Q2CPU operates on a strict 2-bit foundation, meaning data values are clamped
 * **`MODE` (State Register):** A 2-bit register determining how the CPU decodes the current opcode.
 * **`LIO` (Last I/O):** A 2-bit register holding the last value read from or written to an external device.
 
+*If the `PC` were strictly 2-bit, the CPU could only address 4 total memory slots (`0x00` to `0x03`) before the integer wrapped around, making it impossible to write a program longer than 4 instructions. Hence why it is 8 bits.*
+
 ### Memory Map
 System uses a 256-word memory space (`MEM_SIZE = 256`)
 * **Instruction Constraint:** Every memory address strictly holds a 2-bit opcode.
