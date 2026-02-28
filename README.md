@@ -20,6 +20,7 @@ System uses a 256-word memory space (`MEM_SIZE = 256`)
 * **Instruction Constraint:** Every memory address strictly holds a 2-bit opcode.
 * **Addressing Bottleneck:** Because the Accumulator (`A`) is used as the pointer for memory lookups (`MEMORY[A]`), the CPU can natively read or write only to the first four memory addresses (`0x00` to `0x03`).
 
+---
 ## Instruction Set Architecture (ISA)
 
 Because opcodes are strictly 2-bit, the CPU can only define 4 instructions at a time. To bypass this, Q2CPU uses a **Mode-Shift**. The `MODE` register cycles between 4 execution states, resulting in a total of 16 operations. Opcode `3` in every mode acts as the mode-switcher.
@@ -59,6 +60,8 @@ Because opcodes are strictly 2-bit, the CPU can only define 4 instructions at a 
 | `1` | `IN` | `A = read(MEM[A])` | Reads from the device mapped at port `MEMORY[A]` into `A`. |
 | `2` | `READ_OUT` | `A = LIO & 3` | Loads the Last I/O value into the accumulator. |
 | `3` | `NEXT_IO` | `MODE = 0` | Shifts back to Arithmetic Mode. |
+
+---
 
 ## I/O and Peripheral Devices
 
