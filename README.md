@@ -61,7 +61,7 @@ Because opcodes are strictly 2-bit, the CPU can only define 4 instructions at a 
 
 The Q2CPU supports up to 4 mapped ports (`0` to `3`).
 
-### The Dynamic Halt Trap
+### Halting
 
 Number of instructions are limited, so there is no dedicated `HALT` instruction. Instead, the CPU uses an **Unmapped Port Trap**.  
 
