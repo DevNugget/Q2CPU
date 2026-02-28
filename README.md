@@ -1,4 +1,4 @@
-# Q2CPU
+# Q2CPU - The 2-bit CPU Emulator
 A 2-bit experimental CPU emulator.
 
 ## Hardware Specifications
