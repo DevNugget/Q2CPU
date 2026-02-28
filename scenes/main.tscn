@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://bin5sqx8vb0to"]
+
+[ext_resource type="Script" uid="uid://c0oe5fdcrtd0q" path="res://scripts/devices/outport.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dbfb6viaf7yo0" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="FontVariation" uid="uid://da8s5bm653cxh" path="res://fonts/fontdef.tres" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bwxdsv5qagnc7" path="res://scripts/editor.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://dvwdphnc7oqtp" path="res://scripts/control_panel.gd" id="5_tbgi4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgp6g"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5qli"]
+bg_color = Color(0.22, 0.22, 0.22, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
+bg_color = Color(0.12591082, 0.12591085, 0.12591076, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbgi4"]
+bg_color = Color(0.19076231, 0.19076234, 0.19076225, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_tbgi4"]
+default_font = ExtResource("3_sugp2")
+default_font_size = 32
+
+[node name="Main" type="Control" unique_id=494967687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sugp2")
+
+[node name="OutPort" type="Control" parent="." unique_id=504638819 node_paths=PackedStringArray("label")]
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 400.0
+script = ExtResource("1_0wfyh")
+label = NodePath("Panel/RichTextLabel")
+
+[node name="Panel" type="Panel" parent="OutPort" unique_id=1626210693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sgp6g")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OutPort/Panel" unique_id=174804013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_sugp2")
+theme_override_font_sizes/normal_font_size = 32
+
+[node name="TitleBar" type="Panel" parent="OutPort" unique_id=2117709589]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o5qli")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OutPort/TitleBar" unique_id=896003454]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_sugp2")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "OUTPORT"
+
+[node name="Button" type="Button" parent="OutPort/TitleBar" unique_id=904104586]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -159.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_sugp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbgi4")
+text = "CLEAR"
+
+[node name="Editor" type="Control" parent="." unique_id=8823694]
+anchors_preset = 0
+offset_left = 1152.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("4_jyhfs")
+
+[node name="CodeEdit" type="CodeEdit" parent="Editor" unique_id=235175629]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 768.0
+offset_bottom = 1080.0
+theme_override_colors/caret_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_constants/caret_width = 16
+theme_override_fonts/font = ExtResource("3_sugp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_sugp2")
+theme_override_styles/completion = SubResource("StyleBoxFlat_sugp2")
+caret_blink = true
+caret_blink_interval = 0.3
+auto_brace_completion_enabled = true
+
+[node name="TitleBar" type="Panel" parent="Editor" unique_id=1133559081]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o5qli")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Editor/TitleBar" unique_id=1081780943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_sugp2")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "EDITOR"
+
+[node name="Button" type="Button" parent="Editor/TitleBar" unique_id=1453679365]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -159.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_sugp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbgi4")
+text = "MEM LOAD"
+
+[node name="ControlPanel" type="Control" parent="." unique_id=1860898511]
+anchors_preset = 0
+offset_left = 800.0
+offset_top = 232.0
+offset_right = 1088.0
+offset_bottom = 472.0
+script = ExtResource("5_tbgi4")
+
+[node name="Panel" type="Panel" parent="ControlPanel" unique_id=1786496594]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sgp6g")
+
+[node name="run" type="Button" parent="ControlPanel/Panel" unique_id=132074693]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 175.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("3_sugp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbgi4")
+text = "RUN CPU"
+
+[node name="halt" type="Button" parent="ControlPanel/Panel" unique_id=1904549972]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 144.0
+offset_right = 175.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("3_sugp2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jyhfs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbgi4")
+text = "HALT CPU"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ControlPanel/Panel" unique_id=1095607736]
+modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = -16.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_sugp2")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "HALTED"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ControlPanel/Panel" unique_id=2035875043]
+modulate = Color(1, 1, 1, 0.58431375)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = 196.0
+offset_right = -32.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_sugp2")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "CYCLES/s"
+
+[node name="SpinBox" type="SpinBox" parent="ControlPanel/Panel" unique_id=48799248]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 192.0
+offset_right = 102.5
+offset_bottom = 223.0
+theme = SubResource("Theme_tbgi4")
+min_value = 40.0
+max_value = 999.0
+value = 999.0
+
+[node name="TitleBar" type="Panel" parent="ControlPanel" unique_id=1944323652]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o5qli")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ControlPanel/TitleBar" unique_id=384404557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_sugp2")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "CONTROL PANEL"
+
+[connection signal="pressed" from="OutPort/TitleBar/Button" to="OutPort" method="_on_button_pressed"]
+[connection signal="pressed" from="Editor/TitleBar/Button" to="Editor" method="_on_button_pressed"]
+[connection signal="pressed" from="ControlPanel/Panel/run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="ControlPanel/Panel/halt" to="." method="_on_halt_pressed"]
+[connection signal="value_changed" from="ControlPanel/Panel/SpinBox" to="." method="_on_spin_box_value_changed"]

@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://da8s5bm653cxh"]
+
+[ext_resource type="FontFile" uid="uid://ddefhmdgccldn" path="res://fonts/Px437_IBM_VGA_8x16.ttf" id="1_8fimj"]
+
+[resource]
+base_font = ExtResource("1_8fimj")
+spacing_glyph = 1
+spacing_top = 5
